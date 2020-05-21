@@ -12,6 +12,12 @@ class StudentList extends Component {
     this.fetchStudents();
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.currentBlock !== this.props.currentBlock) {
+      this.fetchStudents();
+    }
+  }
+
   render() {
     if (this.state.loading) return <h3>Loading...</h3>;
     return (
@@ -25,8 +31,13 @@ class StudentList extends Component {
   }
 
   fetchStudents = () => {
+    const { currentBlock } = this.props;
     axios
-      .get("https://nc-student-tracker.herokuapp.com/api/students")
+      .get("https://nc-student-tracker.herokuapp.com/api/students", {
+        params: {
+          block: currentBlock,
+        },
+      })
       .then(({ data }) => {
         this.setState({ students: data.students, isLoading: false });
       });

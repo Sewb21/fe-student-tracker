@@ -4,8 +4,8 @@
 
 .Card {
   border: solid 2px red;
-  max-width: 80%;
-  margin: 10px;
+  margin: 0 10% 5%;
+  padding: 5px;
   border-radius: 5px;
 }
 .App-header {
@@ -21,4 +21,11 @@
 .Homepage {
   border: solid 2px green;
   margin: 10px;
+}
+
+.student--block--links {
+  border: solid 2px blue;
+  margin: 0 35% 2%;
+  padding: 5px;
+  border-radius: 5%;
 }

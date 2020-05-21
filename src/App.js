@@ -14,6 +14,7 @@ function App() {
       <Router>
         <Homepage path="/" />
         <StudentList path="/students" />
+        <StudentList path="/students/block/:currentBlock" />
       </Router>
     </div>
   );
